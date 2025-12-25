@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -42,18 +43,18 @@ export default function RootLayout({
                   >
                     My Trips
                   </a>
-                  <a
-                    href="/auth/register"
+                  <Link
+                    href="/auth/signup"
                     className="text-gray-700 hover:text-indigo-600"
                   >
                     Register
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/auth/signin"
                     className="text-gray-700 hover:text-indigo-600"
                   >
                     Login
-                  </a>
+                  </Link>
                 </nav>
               </div>
             </div>
