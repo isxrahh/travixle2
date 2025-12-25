@@ -15,10 +15,9 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <>
-      <HeroCarousel />
-      <Navbar />
-
+    <main>
+      <HeroCarousel/>
+      <Navbar/>
       <MiniForm />
 
       <div className="h-32" />
@@ -29,9 +28,9 @@ export default function Home() {
       <WonderIndia />
       <TrendingCities />
       <PropertyType />
-      <MidSection />
+      <MidSection/>
       <EndSection />
       <Footer />
-    </>
+    </main>
   );
 }

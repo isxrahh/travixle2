@@ -12,8 +12,9 @@ import { Button } from "./ui/button";
 import { HeartIcon } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Separator } from "@/components/ui/separator";
+interface MidSectionProps { homes: any[]; }  // {id: uuid, price, image, etc.}
 
-const MidSection = () => {
+const MidSection = ()=> {
   return (
     <div>
       <section className="py-16 px-4 bg-gradient-to-b from-indigo-50 to-white">
