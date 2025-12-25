@@ -4,3 +4,7 @@ YIpNiFBqwhktGgkC
 npx neonctl@latest init
 
 postgresql://neondb_owner:npg_GMfPl4hygK8E@ep-billowing-band-a13qn3h5-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+
+hotels near sea beach, sea food, good restaurant, shopping places, things to do, lakes, temples
+
+add accommodation suggestions or total cost estimate too? 🚀

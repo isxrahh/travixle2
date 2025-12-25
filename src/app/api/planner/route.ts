@@ -1,54 +1,84 @@
-import { NextRequest, NextResponse } from "next/server";
+// app/api/planner/route.ts
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { NextResponse } from "next/server";
 
-export async function POST(req: NextRequest) {
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
+
+export async function POST(request: Request) {
   try {
-    const { destination, days, budget, preferences } = await req.json();
+    const { destination, days, budget, preferences } = await request.json();
 
     if (!destination || !days) {
       return NextResponse.json(
-        { error: "Missing required fields" },
+        { error: "Destination and days are required" },
         { status: 400 }
       );
     }
 
-    const prompt = `You are an expert travel planner. Create a detailed, realistic ${days}-day itinerary for ${destination}.
-                    Budget: ${budget || "moderate"}.
-                    Preferences: ${preferences?.join(", ") || "none specified"}.
-                    
-                    Include for each day:
-                    - Morning, afternoon, evening activities
-                    - Recommended meals (with cuisine type)
-                    - Transportation tips
-                    - One top attraction
-                    - Estimated daily cost in USD
-                    
-                    Return the response in clean Markdown format with day headings.
-                    `;
-
-    const response = await fetch("https://api.x.ai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.GROK_API_KEY}`,
+    const model = genAI.getGenerativeModel({
+      model: "gemini-2.5-flash",
+      generationConfig: {
+        temperature: 0.9,
+        topP: 0.95,
+        maxOutputTokens: 2048,
       },
-      body: JSON.stringify({
-        model: "grok-3",
-        messages: [{ role: "user", content: prompt }],
-        temperature: 0.8,
-        max_tokens: 1500,
-      }),
     });
 
-    if (!response.ok) throw new Error("Grok API Error");
+const prompt = `Create a beautiful, well-spaced ${days}-day itinerary for ${destination}.
 
-    const data = await response.json();
-    const itinerary = data.choices[0].message.content;
+Budget: ${budget}
+Interests: ${preferences.length ? preferences.join(", ") : "sightseeing, culture, food"}
+
+Use ONLY clean Markdown. NO HTML like <br>.
+
+- Use - for bullet points (with a blank line before and after each list)
+- Add blank lines between every section and subsection for spacing
+- Use ### for Morning/Afternoon/Evening
+
+Structure:
+
+# ${days}-Day ${destination} Trip ✈️
+
+## Overview
+[Exciting intro]
+
+## Day 1: [Creative title]
+
+### 🌅 Morning
+
+- Bullet 1
+- Bullet 2
+
+### ☀️ Afternoon
+
+- Bullet 1
+- Bullet 2
+
+### 🌙 Evening
+
+- Bullet 1
+- Bullet 2
+
+(Continue the same structure for every day with a unique theme title)
+
+## Travel Tips
+- Getting around
+- Approximate daily budget
+- Packing essentials
+- Local etiquette or safety note
+
+Bon voyage! May this trip create memories that last a lifetime 🌟
+`;
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const itinerary = response.text();
 
     return NextResponse.json({ itinerary });
-  } catch (error) {
-    console.error(error);
+  } catch (error: any) {
+    console.error("Gemini error:", error);
     return NextResponse.json(
-      { error: "Failed to generate itinerary" },
+      { error: "Failed to generate itinerary. Rate limit or API issue." },
       { status: 500 }
     );
   }
