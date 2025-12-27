@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Gift } from "lucide-react"; // Added icon for better visual when image isn't available
+import Link from "next/link";
 
 const EndSection = () => {
   return (
@@ -34,8 +35,11 @@ const EndSection = () => {
                 Sign in, save money
               </CardTitle>
               <CardDescription className="text-lg text-gray-600 leading-relaxed">
-                Save <span className="font-semibold text-blue-600">10% or more</span> at thousands of participating properties — just look for the blue{" "}
-                <span className="font-semibold text-blue-600">Genius</span> label.
+                Save{" "}
+                <span className="font-semibold text-blue-600">10% or more</span>{" "}
+                at thousands of participating properties — just look for the
+                blue <span className="font-semibold text-blue-600">Genius</span>{" "}
+                label.
               </CardDescription>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center gap-3">
@@ -74,14 +78,14 @@ const EndSection = () => {
             size="lg"
             className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-lg px-8 py-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
           >
-            Register for Free
+            <Link href="/auth/signup">Register for Free</Link>
           </Button>
           <Button
             size="lg"
             variant="outline"
             className="text-gray-900 cursor-pointer text-lg px-8 py-6 rounded-xl border-2 hover:border-blue-600 hover:bg-blue-50 transition-all"
           >
-            Sign In
+            <Link href="/auth/signin">Sign In</Link>
           </Button>
         </CardFooter>
       </Card>
