@@ -17,24 +17,23 @@ const transporter = nodemailer.createTransport({
 export async function POST(request: Request) {
   try {
     const { email } = await request.json();
-    const subscriberName = email.split("@")[0].replace(/[\W_]/g, " ");
-
-    const formattedName = subscriberName
-      .split(" ")
-      .filter(Boolean)
-      .map((w: string) => w[0].toUpperCase() + w.slice(1).toLowerCase())
-      .join(" ");
-
-    if (!email || !email.includes("@")) {
+    if (!email || typeof email !== "string" || !email.includes("@")) {
       return NextResponse.json(
         { error: "Valid email required" },
         { status: 400 }
       );
     }
 
+    const subscriberName = email.split("@")[0].replace(/[\W_]/g, " ");
+    const formattedName = subscriberName
+      .split(" ")
+      .filter(Boolean)
+      .map((w: string) => w[0].toUpperCase() + w.slice(1).toLowerCase())
+      .join(" ");
+
     const travelStyles = [
       "adventure seeker who loves hiking and off-the-beaten-path experiences",
-      "luxury traveler looking for prenium resorts and fine dining",
+      "luxury traveler looking for premium resorts and fine dining",
       "culture enthusiast interested in history, art, and traditions",
       "beach lover dreaming of tropical escapes and sunsets",
       "foodie chasing the best local cuisine and street food",
@@ -84,7 +83,7 @@ export async function POST(request: Request) {
       .replace(
         /\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g,
         '<a href="$2" style="color:#6366f1; text-decoration:underline;">$1</a>'
-      ) 
+      )
       .replace(/\n\n/g, '</p><p style="margin:18px 0;">')
       .replace(/\n/g, "<br>");
 
@@ -148,7 +147,7 @@ export async function POST(request: Request) {
       </table>
     </body>
     `;
-    
+
     await transporter.sendMail({
       from: `"Travixle" <${process.env.GMAIL_USER}>`,
       to: email,
