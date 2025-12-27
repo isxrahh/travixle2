@@ -659,7 +659,7 @@ export const guestFavorites = [
 // All footer columns data – centralized and easy to maintain/update
 export const footerColumns = [
   {
-    title: "TravelHub",
+    title: "Travixle",
     links: [
       "About Us",
       "Our Story",

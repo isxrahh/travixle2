@@ -14,9 +14,10 @@ import {
   Apple,
   PlayCircle,
 } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaTwitter,FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 import { footerColumns } from "@/constants";
+import { toast } from "sonner";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -26,10 +27,42 @@ const Footer = () => {
             Unlock exclusive travel deals
           </h2>
           <p className="text-xl opacity-90 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Subscribe for personalized offers, flash sales, and inspiration delivered straight to your inbox. Join millions of smart travelers saving big!
+            Subscribe for personalized offers, flash sales, and inspiration
+            delivered straight to your inbox. Join millions of smart travelers
+            saving big!
           </p>
-          <form className="max-w-xl mx-auto flex flex-col sm:flex-row gap-5">
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const emailInput = e.currentTarget.elements.namedItem(
+                "email"
+              ) as HTMLInputElement;
+              const email = emailInput.value.trim();
+
+              if (!email) {
+                toast.error("Please enter your email");
+                return;
+              }
+
+              const res = await fetch("/api/newsletter", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+              });
+
+              if (res.ok) {
+                toast.success(
+                  "Welcome aboard! 🎉 Check your inbox for travel inspiration!"
+                );
+                emailInput.value = "";
+              } else {
+                toast.error("Something went wrong. Try again later.");
+              }
+            }}
+            className="max-w-xl mx-auto flex flex-col sm:flex-row gap-5"
+          >
             <Input
+            name="email"
               type="email"
               placeholder="Your email address"
               className="bg-white/10 backdrop-blur border-white/20 text-white placeholder:text-gray-300 rounded-2xl px-8 py-7 text-lg"
@@ -78,11 +111,15 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-3">
               <CreditCard className="w-6 h-6 text-blue-400" />
-              <span className="text-sm font-medium">Multiple Payment Options</span>
+              <span className="text-sm font-medium">
+                Multiple Payment Options
+              </span>
             </div>
             <div className="flex items-center gap-3">
               <Truck className="w-6 h-6 text-purple-400" />
-              <span className="text-sm font-medium">Free Cancellation on Most Bookings</span>
+              <span className="text-sm font-medium">
+                Free Cancellation on Most Bookings
+              </span>
             </div>
             <div className="flex items-center gap-3">
               <HeadphonesIcon className="w-6 h-6 text-orange-400" />
@@ -94,23 +131,41 @@ const Footer = () => {
             <div className="flex items-center gap-8">
               <p className="text-lg font-semibold text-white">Follow us</p>
               <div className="flex gap-6">
-                <a href="#" aria-label="Facebook" className="hover:text-blue-400 transition">
+                <a
+                  href="#"
+                  aria-label="Facebook"
+                  className="hover:text-blue-400 transition"
+                >
                   <FaFacebookF className="w-7 h-7" />
                 </a>
-                <a href="#" aria-label="Instagram" className="hover:text-blue-400 transition">
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  className="hover:text-blue-400 transition"
+                >
                   <FaInstagram className="w-7 h-7" />
                 </a>
-                <a href="#" aria-label="Twitter" className="hover:text-blue-400 transition">
+                <a
+                  href="#"
+                  aria-label="Twitter"
+                  className="hover:text-blue-400 transition"
+                >
                   <FaTwitter className="w-7 h-7" />
                 </a>
-                <a href="#" aria-label="YouTube" className="hover:text-blue-400 transition">
+                <a
+                  href="#"
+                  aria-label="YouTube"
+                  className="hover:text-blue-400 transition"
+                >
                   <FaYoutube className="w-7 h-7" />
                 </a>
               </div>
             </div>
 
             <div className="flex flex-col items-center gap-6">
-              <p className="text-lg font-semibold text-white">Download our app</p>
+              <p className="text-lg font-semibold text-white">
+                Download our app
+              </p>
               <div className="flex gap-6">
                 <a
                   href="#"
@@ -160,7 +215,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="mt-6 text-xs text-gray-500">
-              Travixle is a registered trademark. Licensed by relevant authorities in multiple jurisdictions.
+              Travixle is a registered trademark. Licensed by relevant
+              authorities in multiple jurisdictions.
             </p>
           </div>
         </div>

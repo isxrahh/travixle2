@@ -306,7 +306,7 @@ export default function RegisterPage() {
                       Creating Your Adventure Account...
                     </>
                   ) : (
-                    "Join TravelHub Now"
+                    "Join Travixle Now"
                   )}
                 </Button>
               </div>
