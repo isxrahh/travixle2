@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import Link from "next/link";
 import { SearchIcon } from "lucide-react";
+import ChatBot from "@/components/ChatBot";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -56,7 +57,7 @@ export default function RootLayout({
                   </Link>
 
                   <Link
-                    href="/trips"
+                    href="/my-trips"
                     className="text-gray-700 hover:text-indigo-600"
                   >
                     My Trips
@@ -78,7 +79,9 @@ export default function RootLayout({
             </div>
           </header>
 
-          <main>{children}</main>
+          <main>{children}
+            <ChatBot/>
+          </main>
         </div>
         <Toaster position="top-center" richColors closeButton />
       </body>
