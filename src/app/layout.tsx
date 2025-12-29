@@ -5,6 +5,10 @@ import { Toaster } from "sonner";
 import Link from "next/link";
 import { SearchIcon } from "lucide-react";
 import ChatBot from "@/components/ChatBot";
+
+import { HotelModalProvider } from '@/context/HotelModalContext';
+import GlobalHotelModal from '@/components/ui/GlobalHotelModal';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -79,7 +83,11 @@ export default function RootLayout({
             </div>
           </header>
 
-          <main>{children}
+          <main>
+            <HotelModalProvider>
+              {children}
+              <GlobalHotelModal/>
+            </HotelModalProvider>
             <ChatBot/>
           </main>
         </div>
