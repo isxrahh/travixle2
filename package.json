@@ -35,6 +35,7 @@
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.23.26",
     "ical-generator": "^10.0.0",
     "instantsearch.js": "^4.85.2",
     "leaflet": "^1.9.4",

@@ -488,250 +488,719 @@ export const propertyTypes = [
 export const weekendDeals = [
     {
         id: 1,
-        name: "Emirates Palace",
-        place: "Abu Dhabi",
-        description: "Set on 85 hectares of landscaped gardens, this palatial beachfront hotel is 4 km from both the Marina Mall and the Qasr al-Hosn fort.",
-        price: "₹1,65,405/night",
+        hotelId: "emirates-palace",
+        name: "Oriental Emirates Palace",
+        place: "West Corniche Road, Abu Dhabi",
+        description: "A legendary palace redefined as a contemporary icon. Set on a pristine private beach with lush gardens, this opulent resort offers Arabian hospitality at its finest.",
+        price: "₹1,65,405",
         fakePrice: "₹1,75,905",
-        review: "Excellent",
+        review: "Exceptional",
+        reviewPoint: "9.6",
+        totalReviews: "3,240 reviews",
         imageUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/6f/5f/6e.jpg",
-        reviewPoint: "4.8",
-        totalReviews: "31K",
+        facilities: ["Private Beach", "Multiple Pools", "Award-Winning Spa", "8 Restaurants", "Butler Service"],
+        roomTypes: [
+            {
+                name: "Coral Room",
+                specs: "1 King Bed • Garden View",
+                features: ["Private Balcony", "iPad Control"],
+                price: "₹1,65,405",
+                savings: "Best Value"
+            }
+        ],
+        locationHighlights:
+            [
+                {
+                    "name": "Qasr Al Watan",
+                    "distance": "1.8 km",
+                    "type": "Cultural Landmark / Presidential Palace"
+                },
+                {
+                    "name": "Etihad Towers",
+                    "distance": "760 m",
+                    "type": "Observation Deck / Landmark"
+                },
+                {
+                    "name": "Marina Mall",
+                    "distance": "2.8 km",
+                    "type": "Shopping Mall"
+                },
+                {
+                    "name": "Heritage Village",
+                    "distance": "3.5 km",
+                    "type": "Cultural / Historical Site"
+                }
+
+
+            ],
+        faqs: [
+            { q: "Is there a dress code?", a: "Smart-casual is required in the lobby and restaurants." }
+        ],
+        policies: {
+            checkIn: "3:00 PM",
+            checkOut: "12:00 PM",
+            cancellation: "Free cancellation 24h before.",
+            notes: "Tourism Dirham fee applicable."
+        }
     },
     {
         id: 2,
+        hotelId: "signiel-seoul",
         name: "Signiel Seoul",
-        place: "South Korea",
-        description: "This posh hotel in a contemporary skyscraper with views of the Han River is a 3-minute walk from the nearest subway station and 4 km from upscale shopping in the Gangnam District.",
-        price: "₹32,938/night",
+        place: "Lotte World Tower, Songpa-gu, Seoul",
+        description: "Located on floors 76-101 of the world's 6th tallest building. Offers panoramic views of the Han River and Seoul skyline.",
+        price: "₹32,938",
         fakePrice: "₹39,487",
-        review: "Very Good",
+        review: "Exceptional",
+        reviewPoint: "9.5",
+        totalReviews: "1,850 reviews",
         imageUrl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/de/2b/08/caption.jpg?w=900&h=500&s=1",
-        reviewPoint: "4.6",
-        totalReviews: "3.1K",
-    }, {
+        facilities: ["Sky-High Views", "Indoor Pool", "Michelin Restaurant", "Champagne Bar"],
+        roomTypes: [
+            {
+                name: "Grand Deluxe Room",
+                specs: "1 King Bed • High Floor",
+                features: ["City View", "Diptyque Amenities"],
+                price: "₹32,938",
+                savings: ""
+            }
+        ],
+        locationHighlights: [
+            { name: "Lotte World Adventure", distance: "0.2 km", type: "Theme Park" },
+            { name: "Seokchon Lake", distance: "0.4 km", type: "Park" },
+            { name: "Olympic Park", distance: "2.1 km", type: "Nature" },
+            { name: "Gangnam District", distance: "4.5 km", type: "Business" }
+        ],
+        faqs: [
+            { q: "Is the gym 24/7?", a: "Yes, available for all guests on the 85th floor." }
+        ],
+        policies: {
+            checkIn: "3:00 PM",
+            checkOut: "11:00 AM",
+            cancellation: "Free until 48h before arrival.",
+            notes: "Pool closed last Monday of every month."
+        }
+    },
+    {
         id: 3,
+        hotelId: "itc-grand-chola",
         name: "ITC Grand Chola",
-        place: "Guindy, Chennai",
-        description: "Located on Anna Salai, it offers extensive, high-end amenities, including multiple dining options like Madras Pavilion and is a prominent landmark in the city. ",
-        price: "₹14,160/night",
+        place: "Guindy, Chennai, Tamil Nadu",
+        description: "A palatial tribute to India's greatest dynasty. Inspired by Chola architecture, featuring grand halls and sustainable luxury.",
+        price: "₹14,160",
         fakePrice: "₹20,226",
-        review: "Very Good",
+        review: "Superb",
+        reviewPoint: "9.3",
+        totalReviews: "12,100 reviews",
         imageUrl: "https://www.itchotels.com/content/dam/itchotels/in/umbrella/itc/hotels/itcgrandchola-chennai/images/overview/overview-desktop/exterior-dusk.png",
-        reviewPoint: "4.7",
-        totalReviews: "42K",
-    }, {
+        facilities: ["Royal Architecture", "10 Restaurants", "Kaya Kalp Spa", "Free Parking"],
+        roomTypes: [
+            {
+                name: "Executive Club Room",
+                specs: "1 King Bed • 405 sq ft",
+                features: ["Business Center Access", "Safe"],
+                price: "₹14,160",
+                savings: "Member Deal"
+            }
+        ],
+        faqs: [
+            { q: "Is breakfast included?", a: "Included in most rates at the Madras Pavilion." }
+        ],
+        locationHighlights: [
+            { name: "Guindy National Park", distance: "1.1 km", type: "Nature" },
+            { name: "Chennai Airport (MAA)", distance: "6.5 km", type: "Transit" },
+            { name: "Marina Beach", distance: "9.0 km", type: "Beach" },
+            { name: "Phoenix Marketcity", distance: "2.8 km", type: "Shopping" }
+        ],
+        policies: {
+            checkIn: "2:00 PM",
+            checkOut: "12:00 PM",
+            cancellation: "Free until 6:00 PM on day of arrival.",
+            notes: "Valid Photo ID required."
+        }
+    },
+    {
         id: 4,
+        hotelId: "badrutts-palace",
         name: "Badrutt's Palace Hotel",
-        place: "St. Moritz, Switzerland",
-        description: "Built in 1896, this landmark luxury hotel, open seasonally, overlooks Lake Saint Moritz and offers views of the surrounding Swiss Alps. It's a 6-minute walk from the cable car and train stations, and 7 km from Engadin Airport.",
+        place: "Via Serlas 27, St. Moritz, Switzerland",
+        description: "The legendary grande dame of the Alps since 1896. Overlooking Lake St. Moritz, offering timeless elegance and world-class skiing.",
         price: "₹2,50,876",
         fakePrice: "₹3,55,987",
-        review: "Excellent",
+        review: "Exceptional",
+        reviewPoint: "9.4",
+        totalReviews: "1,120 reviews",
         imageUrl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3b/f3/c8/badrutt-s-palace-hotel.jpg?w=900&h=500&s=1",
-        reviewPoint: "4.7",
-        totalReviews: "1.3K",
-    },
-
+        facilities: ["Lake Views", "Ski-in Access", "Indoor Pool", "Gourmet Dining"],
+        roomTypes: [
+            {
+                name: "Deluxe Single Room",
+                specs: "1 Queen Bed • Mountain View",
+                features: ["Heated Floor", "Ski Storage"],
+                price: "₹2,50,876",
+                savings: ""
+            }
+        ],
+        faqs: [
+            { q: "Do you offer ski rentals?", a: "Yes, our in-house ski boutique handles all equipment." }
+        ],
+        locationHighlights: [
+            { name: "Lake St. Moritz", distance: "0.1 km", type: "Lake" },
+            { name: "Corviglia Ski Lift", distance: "0.5 km", type: "Skiing" },
+            { name: "Cresta Run", distance: "0.8 km", type: "Sports" },
+            { name: "St. Moritz Train Station", distance: "0.4 km", type: "Transit" }
+        ],
+        policies: {
+            checkIn: "3:00 PM",
+            checkOut: "12:00 PM",
+            cancellation: "Strict during winter peak seasons.",
+            notes: "Pets welcome with prior notice."
+        }
+    }
 ];
 
 export const uniqueProperties = [
     {
         id: 1,
+        hotelId: "treehouse-in-kerala",
         name: "Treehouse in Kerala",
-        place: "Kerala",
-        description: "Stay among the treetops",
+        place: "Munnar, Kerala, India",
+        description: "Experience the magic of the Western Ghats from 40 feet above the ground. This sustainable bamboo structure offers panoramic views of tea plantations and frequent bird sightings.",
         imageUrl: "../assets/kerala.jpg",
+        price: "₹12,500",
+        fakePrice: "₹15,000",
         review: "Good",
         reviewPoint: "4.2",
         totalReviews: "2.1K",
+        facilities: ["Free WiFi", "Gym", "Parking", "Butler Service"],
+        locationHighlights: [
+            { name: "Munnar Tea Gardens", distance: "500m", type: "Nature" },
+            { name: "Eravikulam Park", distance: "8km", type: "Landmark" },
+            { name: "Cochin Airport", distance: "110km", type: "Transport" }
+        ],
+        roomTypes: [
+            {
+                name: "Canopy Deluxe Suite",
+                specs: "1 King Bed • 350 sq ft • Private Deck",
+                features: ["Organic Toiletries", "Coffee Maker", "Mountain View"],
+                price: "₹12,500",
+                savings: "Early Bird Offer"
+            },
+            {
+                name: "Family Banyan Nest",
+                specs: "2 Queen Beds • 600 sq ft • Glass Floors",
+                features: ["Mini Library", "Hammock", "Binoculars Provided"],
+                price: "₹18,000",
+                savings: ""
+            }
+        ],
+        faqs: [
+            { q: "Is it safe for children?", a: "Yes, all decks are secured with 4-foot high safety netting and solid bamboo railings." },
+            { q: "How do we get our luggage up?", a: "We have a dedicated pulley system and staff to transport your bags safely to your room." }
+        ],
+        policies: {
+            checkIn: "2:00 PM",
+            checkOut: "11:00 AM",
+            cancellation: "Flexible: Full refund 48 hours before arrival.",
+            notes: "Strictly no smoking due to the bamboo structure."
+        }
     },
     {
         id: 2,
+        hotelId: "glass-igloo-in-manali",
         name: "Glass Igloo in Manali",
-        place: "Manali",
-        description: "Stargazing luxury dome",
+        place: "Sethan, Manali, India",
+        description: "Sleep under the northern stars in a heated glass dome. Located in a restricted high-altitude zone, this igloo provides a 360-degree view of the snow-capped Himalayas.",
+        imageUrl: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
+        price: "₹22,000",
+        fakePrice: "₹28,500",
         review: "Very Good",
         reviewPoint: "4.5",
         totalReviews: "42K",
-        imageUrl: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
+        facilities: ["Indoor Pool", "Sauna", "Michelin Restaurant", "Free WiFi"],
+        locationHighlights: [
+            { name: "Sethan Valley", distance: "100m", type: "Nature" },
+            { name: "Hampta Pass Trek", distance: "2km", type: "Activity" },
+            { name: "Manali Mall Road", distance: "12km", type: "City Center" }
+        ],
+        roomTypes: [
+            {
+                name: "Aurora Glass Dome",
+                specs: "1 Queen Bed • Heated Floors",
+                features: ["Star-gazing App", "Remote Blinds", "Plush Robes"],
+                price: "₹22,000",
+                savings: "Most Popular"
+            }
+        ],
+        faqs: [
+            { q: "Does the glass fog up?", a: "No, we use specialized double-glazed anti-fog glass with integrated heating." },
+            { q: "Is the road accessible in winter?", a: "We provide 4x4 transfers from Manali mall road included in your stay." }
+        ],
+        policies: {
+            checkIn: "1:00 PM",
+            checkOut: "10:00 AM",
+            cancellation: "Non-refundable during peak snow season (Dec-Feb).",
+            notes: "Heavy woolens recommended even inside the dome."
+        }
     },
     {
         id: 3,
+        hotelId: "aparthotel-stare-miasto",
         name: "Aparthotel Stare Miasto",
-        place: "Old Town, Poland, Krakow",
+        place: "Old Town, Krakow, Poland",
+        description: "Modern luxury meets medieval charm. Located in the heart of Krakow, these apartments feature exposed brick walls and high-end Italian furniture.",
         imageUrl: "../assets/house-3.webp",
+        price: "₹9850",
+        fakePrice: "₹12900",
         review: "Excellent",
         reviewPoint: "8.8",
         totalReviews: "3.2K",
-    }, {
+        facilities: ["Free WiFi", "Parking", "Kitchenette", "Gym"],
+        locationHighlights: [
+            { name: "Main Market Square", distance: "200m", type: "Landmark" },
+            { name: "Wawel Royal Castle", distance: "800m", type: "History" },
+            { name: "Kraków Glowny Station", distance: "1.2km", type: "Transport" }
+        ],
+        roomTypes: [
+            {
+                name: "Studio Apartment",
+                specs: "1 Double Bed • City View",
+                features: ["Full Kitchen", "Smart TV", "Rain Shower"],
+                price: "₹11000",
+                savings: "Best Seller"
+            },
+            {
+                name: "Royal Penthouse",
+                specs: "2 Bedrooms • View of Wawel Castle",
+                features: ["Washer/Dryer", "Dining Area", "Balcony"],
+                price: "₹21000",
+                savings: "Group Deal"
+            }
+        ],
+        faqs: [
+            { q: "Is there an elevator?", a: "Yes, the building is fully accessible with a modern elevator." },
+            { q: "Is it noisy near the square?", a: "We use triple-paned soundproof windows to ensure a quiet night's sleep." }
+        ],
+        policies: {
+            checkIn: "3:00 PM",
+            checkOut: "11:00 AM",
+            cancellation: "Free cancellation up to 7 days before check-in.",
+            notes: "Quiet hours observed from 10:00 PM to 7:00 AM."
+        }
+    },
+    {
         id: 4,
+        hotelId: "7seasons-apartment-budapest",
         name: "7Seasons Apartment Budapest",
-        place: "06. Terézváros, Hungary, Budapest",
+        place: "06. Terézváros, Budapest, Hungary",
+        description: "Perfectly situated for exploring the city, these apartments offer the space of a home with the service of a 4-star hotel.",
         imageUrl: "../assets/house-4.webp",
+        price: "₹8500",
+        fakePrice: "₹10800",
         review: "Excellent",
         reviewPoint: "8.7",
         totalReviews: "10K",
+        facilities: ["Free WiFi", "Kids Club", "Airport Shuttle", "8 Restaurants"],
+        locationHighlights: [
+            { name: "Deák Ferenc Square", distance: "150m", type: "Transport" },
+            { name: "St. Stephen's Basilica", distance: "400m", type: "Landmark" },
+            { name: "Opera House", distance: "600m", type: "Culture" }
+        ],
+        roomTypes: [
+            {
+                name: "Standard One-Bedroom",
+                specs: "1 Queen Bed + Sofa Bed",
+                features: ["Dishwasher", "Air Conditioning", "Safe"],
+                price: "₹9500",
+                savings: "Member Deal"
+            }
+        ],
+        faqs: [
+            { q: "Do you store luggage?", a: "Yes, we have a secure luggage room available 24/7 free of charge." }
+        ],
+        policies: {
+            checkIn: "2:00 PM",
+            checkOut: "11:00 AM",
+            cancellation: "Flexible rates available.",
+            notes: "Photo ID required for all guests at check-in."
+        }
     },
-
     {
         id: 5,
+        hotelId: "numa-florence-vita",
         name: "Numa Florence Vita",
-        place: "Santa Maria Novella, Italy, Florence",
+        place: "Santa Maria Novella, Florence, Italy",
+        description: "Sustainable luxury in a historic Florentine building. Featuring contactless check-in and curated local art in every suite.",
         imageUrl: "../assets/house-5.webp",
+        price: "₹16100",
+        fakePrice: "₹19700",
         review: "Excellent",
         reviewPoint: "8.9",
         totalReviews: "1.1K",
-    }, {
+        facilities: ["Free WiFi", "Award-Winning Spa", "Butler Service", "Sauna"],
+        locationHighlights: [
+            { name: "Santa Maria Novella", distance: "300m", type: "Transport" },
+            { name: "Duomo Cathedral", distance: "900m", type: "Landmark" },
+            { name: "Uffizi Gallery", distance: "1.4km", type: "Art" }
+        ],
+        roomTypes: [
+            {
+                name: "Superior Suite",
+                specs: "King Bed • High Ceilings",
+                features: ["Sustainable Linens", "Yoga Mat", "Local Snacks"],
+                price: "₹18000",
+                savings: ""
+            }
+        ],
+        faqs: [
+            { q: "How does digital check-in work?", a: "You will receive a PIN code for the main entrance and your room via email 24 hours before arrival." }
+        ],
+        policies: {
+            checkIn: "3:00 PM",
+            checkOut: "11:00 AM",
+            cancellation: "Non-refundable rates are 10% cheaper.",
+            notes: "100% smoke-free property."
+        }
+    },
+    {
         id: 6,
+        hotelId: "leman-locke",
         name: "Leman Locke",
-        place: "Tower Hamlets, UK, London",
+        place: "Tower Hamlets, London, UK",
+        description: "A design-led hotel for those who want to experience the local lifestyle. Soft pink interiors and floor-to-ceiling windows overlooking the Shard.",
         imageUrl: "../assets/house-6.webp",
+        price: "₹22100",
+        fakePrice: "₹26300",
         review: "Very Good",
         reviewPoint: "8.4",
         totalReviews: "814",
+        facilities: ["Gym", "8 Restaurants", "Free WiFi", "Coffee"],
+        locationHighlights: [
+            { name: "Aldgate East Station", distance: "100m", type: "Transport" },
+            { name: "The Tower of London", distance: "1km", type: "Landmark" },
+            { name: "Spitalfields Market", distance: "800m", type: "Shopping" }
+        ],
+        roomTypes: [
+            {
+                name: "Locke Studio",
+                specs: "King Bed • Smart Kitchen",
+                features: ["L-Shaped Sofa", "Power Shower", "Yoga Classes"],
+                price: "₹21000",
+                savings: "Work-from-hotel Deal"
+            }
+        ],
+        faqs: [
+            { q: "Is there a co-working space?", a: "Yes, our lobby is designed as a collaborative workspace with high-speed internet." }
+        ],
+        policies: {
+            checkIn: "4:00 PM",
+            checkOut: "11:00 AM",
+            cancellation: "Free until 2:00 PM on day of arrival.",
+            notes: "Pets are welcome for a small cleaning fee."
+        }
     }
 ];
 
 export const guestFavorites = [
     {
         id: 1,
+        hotelId: "cozy-cottage-in-shimla",
         name: "Cozy Cottage in Shimla",
         place: "Shimla, India",
-        rating: "4.95 ★",
-        price: "₹7000 ",
-        review: "Nice",
-        totalReviews: "20K",
+        description: "A charming traditional cottage nestled in the deodar forests. Offering a peaceful retreat with authentic Himachali architecture and cozy fireplaces.",
         imageUrl: "https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
+        price: "₹7,000",
+        fakePrice: "₹9,500",
+        review: "Nice",
+        reviewPoint: "4.95",
+        totalReviews: "20K",
+        facilities: ["Free WiFi", "Fireplace", "Kitchen", "Mountain View"],
+        locationHighlights: [
+            { name: "The Ridge", distance: "1.5km", type: "City Center" },
+            { name: "Mall Road", distance: "1.2km", type: "Shopping" },
+            { name: "Jakhu Temple", distance: "3km", type: "Landmark" }
+        ],
+        roomTypes: [
+            {
+                name: "Standard Pine Room",
+                specs: "1 Queen Bed • 250 sq ft",
+                features: ["Heater", "Tea Maker", "Forest View"],
+                price: "₹7,000",
+                savings: "Member Deal"
+            }
+        ],
+        faqs: [
+            { q: "Is parking available?", a: "Yes, we have space for two light vehicles at the cottage entrance." }
+        ],
+        policies: {
+            checkIn: "12:00 PM",
+            checkOut: "11:00 AM",
+            cancellation: "Flexible: Full refund 24 hours before arrival.",
+            notes: "Please carry a valid Govt ID."
+        }
     },
     {
         id: 2,
+        hotelId: "beachfront-villa-in-goa",
         name: "Beachfront Villa in Goa",
         place: "Goa, India",
-        rating: "4.98 ★",
-        price: "₹ 20,000",
-        review: "Very Good",
-        totalReviews: "40K",
+        description: "Step directly onto the golden sands from this luxury villa. Features a private infinity pool and an expansive deck for sunset viewing.",
         imageUrl: "https://goavillaholiday.com/assets/img/custom/villa/dreamwood/1.jpg",
+        price: "₹20,000",
+        fakePrice: "₹25,000",
+        review: "Very Good",
+        reviewPoint: "4.98",
+        totalReviews: "40K",
+        facilities: ["Private Pool", "Beach Access", "Barbecue", "Free WiFi"],
+        locationHighlights: [
+            { name: "Calangute Beach", distance: "50m", type: "Beach" },
+            { name: "Aguada Fort", distance: "4km", type: "History" },
+            { name: "Tito's Lane", distance: "2km", type: "Nightlife" }
+        ],
+        roomTypes: [
+            {
+                name: "Oceanfront Master Suite",
+                specs: "1 King Bed • 500 sq ft • Private Deck",
+                features: ["Outdoor Shower", "Mini Bar", "Sea View"],
+                price: "₹20,000",
+                savings: "Seasonal Offer"
+            }
+        ],
+        faqs: [
+            { q: "Do you provide airport transfers?", a: "Yes, we can arrange a private luxury sedan for an additional charge." }
+        ],
+        policies: {
+            checkIn: "2:00 PM",
+            checkOut: "11:00 AM",
+            cancellation: "Strict: No refund within 7 days of arrival.",
+            notes: "Music allowed until 10:00 PM."
+        }
     },
     {
         id: 3,
+        hotelId: "elegant-stylish-apt-hungary",
         name: "Elegant & Stylish Apartment City Center",
         place: "Hungary",
-        rating: "9.4 ★",
-        price: "₹ 12,143",
-        review: "Wonderful",
-        totalReviews: "107",
+        description: "A chic, minimalist apartment in the heart of the city. Perfect for urban explorers seeking style and comfort with top-tier amenities.",
         imageUrl: "../assets/house-7.webp",
+        price: "₹12,143",
+        fakePrice: "₹15,500",
+        review: "Wonderful",
+        reviewPoint: "9.4",
+        totalReviews: "107",
+        facilities: ["Smart Home System", "Kitchenette", "Free WiFi", "Nespresso Machine"],
+        locationHighlights: [
+            { name: "Parliament Building", distance: "1km", type: "Landmark" },
+            { name: "Chain Bridge", distance: "1.5km", type: "Landmark" },
+            { name: "Jewish Quarter", distance: "500m", type: "Nightlife" }
+        ],
+        roomTypes: [
+            {
+                name: "Modern Studio",
+                specs: "1 Double Bed • City View",
+                features: ["Smart TV", "Designer Furniture", "Rain Shower"],
+                price: "₹12,143",
+                savings: "Top Rated"
+            }
+        ],
+        faqs: [
+            { q: "Is there a grocery store nearby?", a: "Yes, there is a 24/7 supermarket just 100 meters away." }
+        ],
+        policies: {
+            checkIn: "3:00 PM",
+            checkOut: "10:00 AM",
+            cancellation: "Moderate: 50% refund up to 5 days before arrival.",
+            notes: "Self check-in with keypad."
+        }
     },
     {
         id: 4,
+        hotelId: "cheval-three-quays-london",
         name: "Cheval Three Quays at The Tower of London",
         place: "UK, London",
-        rating: "9.4 ★",
-        price: "₹44,690 ",
-        review: "Wonderful",
-        totalReviews: "790",
+        description: "Award-winning apartments overlooking the Thames. Experience unparalleled views of Tower Bridge and the Shard from your floor-to-ceiling windows.",
         imageUrl: "../assets/house-8.webp",
+        price: "₹44,690",
+        fakePrice: "₹52,000",
+        review: "Wonderful",
+        reviewPoint: "9.4",
+        totalReviews: "790",
+        facilities: ["24h Concierge", "Gym", "River View", "Free WiFi"],
+        locationHighlights: [
+            { name: "Tower Hill Station", distance: "300m", type: "Transport" },
+            { name: "The Shard", distance: "1.2km", type: "Landmark" },
+            { name: "Borough Market", distance: "1.5km", type: "Food" }
+        ],
+        roomTypes: [
+            {
+                name: "One Bedroom River View",
+                specs: "1 King Bed • Thames View",
+                features: ["Full Kitchen", "Luxury Toiletries", "Balcony"],
+                price: "₹44,690",
+                savings: "Early Bird Offer"
+            }
+        ],
+        faqs: [
+            { q: "Is the gym open 24/7?", a: "Yes, our residents' gym is accessible at any time." }
+        ],
+        policies: {
+            checkIn: "4:00 PM",
+            checkOut: "11:00 AM",
+            cancellation: "Flexible: Free cancellation 48h prior.",
+            notes: "No pets allowed."
+        }
     },
     {
         id: 5,
+        hotelId: "villa-domina-split",
         name: "Villa Domina",
         place: "Split City Center, Croatia",
-        rating: "9.3 ★",
-        price: "₹5,231 ",
-        review: "Wonderful",
-        totalReviews: "1.3K",
+        description: "Housed in a meticulously restored stone building. Villa Domina combines Mediterranean warmth with high-end modern hospitality.",
         imageUrl: "../assets/house-9.webp",
+        price: "₹5,231",
+        fakePrice: "₹7,800",
+        review: "Wonderful",
+        reviewPoint: "9.3",
+        totalReviews: "1.3K",
+        facilities: ["Airport Shuttle", "Air Conditioning", "Free WiFi", "Coffee Bar"],
+        locationHighlights: [
+            { name: "Diocletian's Palace", distance: "400m", type: "History" },
+            { name: "Split Riva", distance: "500m", type: "Walkway" },
+            { name: "Ferry Port", distance: "1km", type: "Transport" }
+        ],
+        roomTypes: [
+            {
+                name: "Deluxe Stone Room",
+                specs: "1 Queen Bed • Exposed Brick",
+                features: ["Soundproofing", "Mini Fridge", "Historical View"],
+                price: "₹5,231",
+                savings: "Best Value"
+            }
+        ],
+        faqs: [
+            { q: "How far is the beach?", a: "Bačvice Beach is a 15-minute walk from the property." }
+        ],
+        policies: {
+            checkIn: "2:00 PM",
+            checkOut: "10:00 AM",
+            cancellation: "Flexible: Full refund 7 days before arrival.",
+            notes: "Quiet hours after 11:00 PM."
+        }
     },
     {
         id: 6,
+        hotelId: "apartments-by-sloane-club",
         name: "The Apartments by the Sloane Club",
         place: "UK, London",
-        rating: "8.8 ★",
-        price: "₹ 46,493",
-        review: "Excellent",
-        totalReviews: "247",
+        description: "Nestled in the heart of Chelsea. These sophisticated apartments offer an exclusive residential experience with access to club amenities.",
         imageUrl: "../assets/house-10.webp",
-    },
+        price: "₹46,493",
+        fakePrice: "₹55,000",
+        review: "Excellent",
+        reviewPoint: "8.8",
+        totalReviews: "247",
+        facilities: ["Club Access", "Fine Dining", "Free WiFi", "Laundry"],
+        locationHighlights: [
+            { name: "Sloane Square Station", distance: "200m", type: "Transport" },
+            { name: "Harrods", distance: "1.2km", type: "Shopping" },
+            { name: "Saatchi Gallery", distance: "500m", type: "Art" }
+        ],
+        roomTypes: [
+            {
+                name: "Chelsea Studio",
+                specs: "1 King Bed • Designer Interior",
+                features: ["Luxury Bedding", "Daily Housekeeping", "Tablet Control"],
+                price: "₹46,493",
+                savings: "Long Stay Discount"
+            }
+        ],
+        faqs: [
+            { q: "Can guests use the Sloane Club dining room?", a: "Yes, residents have full access to the Club's dining and bar facilities." }
+        ],
+        policies: {
+            checkIn: "3:00 PM",
+            checkOut: "11:00 AM",
+            cancellation: "Strict: Full refund only 14 days prior.",
+            notes: "Smart casual dress code for club areas."
+        },
+    }
 ];
-
 // All footer columns data – centralized and easy to maintain/update
 export const footerColumns = [
-  {
-    title: "Travixle",
-    links: [
-      "About Us",
-      "Our Story",
-      "Leadership Team",
-      "Careers",
-      "Press & Media",
-      "Investor Relations",
-      "Sustainability",
-      "Diversity & Inclusion",
-    ],
-  },
-  {
-    title: "Explore",
-    links: [
-      "Hotels & Accommodations",
-      "Flights",
-      "Car Rentals",
-      "Vacation Rentals",
-      "Attractions & Tours",
-      "Cruises",
-      "Travel Insurance",
-      "Genius Loyalty Program",
-      "Gift Cards",
-    ],
-  },
-  {
-    title: "Support",
-    links: [
-      "Help Center",
-      "Contact Us",
-      "Booking Management",
-      "Cancellation Policies",
-      "COVID-19 Resources",
-      "Safety & Security",
-      "Report an Issue",
-      "Accessibility",
-    ],
-  },
-  {
-    title: "Partners",
-    links: [
-      "List Your Property",
-      "Affiliate Program",
-      "Business Travel Solutions",
-      "Advertising",
-      "Partner Portal",
-      "API Integration",
-      "Connectivity Partners",
-    ],
-  },
-  {
-    title: "Community",
-    links: [
-      "Travel Stories",
-      "Traveler Reviews",
-      "Destination Guides",
-      "Blog",
-      "Travel Forum",
-      "Responsible Travel",
-      "Volunteer Opportunities",
-    ],
-  },
-  {
-    title: "Legal & Trust",
-    links: [
-      "Privacy Policy",
-      "Terms of Service",
-      "Cookie Policy",
-      "Modern Slavery Statement",
-      "Human Rights Policy",
-      "License Information",
-      "Do Not Sell My Info",
-    ],
-  },
+    {
+        title: "Travixle",
+        links: [
+            "About Us",
+            "Our Story",
+            "Leadership Team",
+            "Careers",
+            "Press & Media",
+            "Investor Relations",
+            "Sustainability",
+            "Diversity & Inclusion",
+        ],
+    },
+    {
+        title: "Explore",
+        links: [
+            "Hotels & Accommodations",
+            "Flights",
+            "Car Rentals",
+            "Vacation Rentals",
+            "Attractions & Tours",
+            "Cruises",
+            "Travel Insurance",
+            "Genius Loyalty Program",
+            "Gift Cards",
+        ],
+    },
+    {
+        title: "Support",
+        links: [
+            "Help Center",
+            "Contact Us",
+            "Booking Management",
+            "Cancellation Policies",
+            "COVID-19 Resources",
+            "Safety & Security",
+            "Report an Issue",
+            "Accessibility",
+        ],
+    },
+    {
+        title: "Partners",
+        links: [
+            "List Your Property",
+            "Affiliate Program",
+            "Business Travel Solutions",
+            "Advertising",
+            "Partner Portal",
+            "API Integration",
+            "Connectivity Partners",
+        ],
+    },
+    {
+        title: "Community",
+        links: [
+            "Travel Stories",
+            "Traveler Reviews",
+            "Destination Guides",
+            "Blog",
+            "Travel Forum",
+            "Responsible Travel",
+            "Volunteer Opportunities",
+        ],
+    },
+    {
+        title: "Legal & Trust",
+        links: [
+            "Privacy Policy",
+            "Terms of Service",
+            "Cookie Policy",
+            "Modern Slavery Statement",
+            "Human Rights Policy",
+            "License Information",
+            "Do Not Sell My Info",
+        ],
+    },
 ];
