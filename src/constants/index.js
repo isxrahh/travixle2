@@ -391,96 +391,112 @@ export const propertyTypes = [
         id: 1,
         name: "Luxury Hotels",
         description: "5-star stays with premium amenities",
+        searchType:"Hotels",
         imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
     },
     {
         id: 2,
         name: "Beach Resorts",
         description: "Oceanfront relaxation and water sports",
+        searchType:"Resorts",
         imageUrl: "https://images.unsplash.com/photo-1598598795006-ea2174659eaa?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         id: 3,
         name: "Boutique Stays",
         description: "Unique, stylish, and intimate experiences",
+        searchType:"Villas",
         imageUrl: "https://images.unsplash.com/photo-1664189027407-a43a7295e01a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         id: 4,
         name: "Villas & Apartments",
         description: "Private homes with kitchen and space",
+        searchType:"Apartments",
         imageUrl: "https://plus.unsplash.com/premium_photo-1682377521697-bc598b52b08a?q=80&w=1215&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         id: 5,
         name: "Homestays",
         description: "Live like a local with warm hospitality",
+        searchType:"Apartments",
         imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
     },
     {
         id: 6,
         name: "Cabins",
         description: "Cozy wooden retreats in nature",
+        searchType:"Cabins",
         imageUrl: "https://plus.unsplash.com/premium_photo-1686090449194-04ac2af9f758?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         id: 7,
         name: "Cottages",
         description: "Charming countryside escapes for families",
+        searchType:"Resort",
         imageUrl: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
     },
     {
         id: 8,
         name: "Glamping Sites",
         description: "Luxury camping under the stars",
+        searchType:"Resort",
         imageUrl: "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
     },
     {
         id: 9,
         name: "Vacation Homes",
         description: "Spacious properties for group getaways",
+        searchType:"Apartments",
         imageUrl: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
     },
     {
         id: 10,
         name: "Guest House",
         description: "Affordable comfort with personal touches",
+        searchType:"Apartments",
         imageUrl: "https://images.unsplash.com/photo-1544124499-58912cbddaad?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
     },
     {
         id: 11,
         name: "Hostels",
         description: "Budget-friendly rooms for social travelers",
+        searchType:"Apartments",
         imageUrl: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         id: 12,
         name: "Motels",
         description: "Convenient roadside stops for motorists",
+        searchType:"Hotels",
         imageUrl: "https://images.unsplash.com/photo-1625669709111-6df35affa0a5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         id: 13,
         name: "B&Bs",
         description: "Quaint lodging with homemade breakfast",
+        searchType:"B&Bs",
         imageUrl: "https://images.unsplash.com/photo-1561501900-3701fa6a0864?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
     },
     {
         id: 14,
         name: "Ryokans",
         description: "Traditional Japanese inns with tatami",
+        searchType:"Traditional",
         imageUrl: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
     },
     {
         id: 15,
         name: "Riads",
         description: "Historic Moroccan homes with courtyards",
+        searchType:"Traditional",
         imageUrl: "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
     },
     {
         id: 16,
         name: "Resort Villages",
         description: "All-inclusive complexes with full recreation",
+        searchType:"",
         imageUrl: "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
     },
 ];
@@ -1203,4 +1219,31 @@ export const footerColumns = [
             "Do Not Sell My Info",
         ],
     },
+];
+
+export const platformFaqs = [
+  {
+    question: "How do I make a booking on this platform?",
+    answer: "Simply search for your destination, choose your preferred hotel, and click 'See Availability.' Once you select a room, you'll enter your guest details and receive an instant confirmation email once the booking is complete."
+  },
+  {
+    question: "Are there any hidden booking fees?",
+    answer: "No, we believe in transparent pricing. The price you see includes all mandatory taxes and service charges. Any optional fees (like parking or spa services) will be clearly listed by the hotel."
+  },
+  {
+    question: "Can I cancel or change my booking through the site?",
+    answer: "Yes. You can manage your booking through your account or the link in your confirmation email. Cancellation policies vary by property, so please check the 'Free Cancellation' status before booking."
+  },
+  {
+    question: "What payment methods are accepted?",
+    answer: "We accept all major credit and debit cards, including Visa, Mastercard, and American Express. Many properties also offer a 'Book Now, Pay Later' option where you pay directly at the hotel."
+  },
+  {
+    question: "How do I know if my booking is confirmed?",
+    answer: "As soon as you complete the checkout process, a confirmation page will appear. We also send a detailed confirmation email to your registered address with your booking ID and check-in instructions."
+  },
+  {
+    question: "How does the 'Best Price Guarantee' work?",
+    answer: "If you find a lower price for the same room and conditions on another website after booking with us, we will match the price or refund the difference. Just contact our support team with the details."
+  }
 ];
