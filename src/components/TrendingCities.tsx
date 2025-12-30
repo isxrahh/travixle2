@@ -60,12 +60,15 @@ const TrendingCities = () => {
                 <h3 className="text-2xl md:text-3xl font-bold mb-2 drop-shadow-2xl">
                   {item.name}
                 </h3>
-                <a
-                  href="#"
+                 <Link
+                  key={item.id}
+                  href={`/destinations/${item.name}`}
+                  target="_blank"
+                   rel="noopener noreferrer"
                   className="mt-4 inline-block text-sm bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full font-medium hover:bg-white/30 transition"
                 >
                   Explore →
-                </a>
+                </Link>
               </div>
             </div>
           ))}

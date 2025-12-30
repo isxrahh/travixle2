@@ -1247,3 +1247,49 @@ export const platformFaqs = [
     answer: "If you find a lower price for the same room and conditions on another website after booking with us, we will match the price or refund the difference. Just contact our support team with the details."
   }
 ];
+
+export const renderAmenities = () => {
+    // Get all potential amenity data from the API
+    const amenitiesArray = hotel.amenities || []; // Numeric IDs like [35, 40]
+    const extensionsArray = hotel.extensions || []; // String labels like ["Free Wi-Fi", "Pool"]
+
+    const iconMap = [
+      {
+        id: "wifi",
+        icon: <Wifi size={14} />,
+        label: "WiFi",
+        codes: [35, 29], // Official SearchApi IDs for WiFi
+        keywords: ["wifi", "wi-fi", "internet"],
+      },
+      {
+        id: "pool",
+        icon: <Waves size={14} />,
+        label: "Pool",
+        codes: [4, 5, 6, 32], // IDs for Indoor, Outdoor, General Pool
+        keywords: ["pool", "swimming"],
+      },
+      {
+        id: "ac",
+        icon: <Wind size={14} />,
+        label: "AC",
+        codes: [40, 4], // ID for Air-conditioned
+        keywords: ["air conditioning", "ac", "air-conditioned"],
+      },
+      {
+        id: "parking",
+        icon: <Car size={14} />,
+        label: "Parking",
+        codes: [1, 3], // Free parking, General parking
+        keywords: ["parking"],
+      },
+      {
+        id: "dining",
+        icon: <Coffee size={14} />,
+        label: "Breakfast",
+        codes: [8, 9, 15], // Restaurant, Free breakfast, Bar
+        keywords: ["breakfast", "dining", "restaurant"],
+      },
+    ];
+
+   
+  };
