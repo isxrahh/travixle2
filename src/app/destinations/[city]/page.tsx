@@ -1,17 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import convertAndFormatPrice from "@/lib/priceFormatter";
 import {
-  Star,
-  MapPin,
   Filter,
   Search,
   ChevronRight,
   ArrowUpDown,
 } from "lucide-react";
+import HotelResultCard from "@/components/HotelResultCard";
 
 export default function CitySearchPage() {
   const params = useParams();
@@ -212,95 +210,4 @@ export default function CitySearchPage() {
   );
 }
 
-function HotelResultCard({ hotel }: { hotel: any }) {
-  const landmark =
-    hotel.nearby_places?.[0]?.name ||
-    hotel.extensions?.find((e: string) => e.toLowerCase().includes("near")) ||
-    "City Center";
 
-  const description =
-    hotel.description ||
-    `${hotel.name} offers a premium stay experience in the heart of the city. Guests can enjoy state-of-the-art facilities, including high-speed internet, 24-hour room service, and luxury bedding. Whether you are traveling for business or leisure, our prime location ensures you are never far from the best dining and shopping experiences available.`;
-  return (
-    <div className="flex flex-col md:flex-row bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all border-l-4 border-l-transparent hover:border-l-blue-600 group">
-      <div className="md:w-72 shrink-0 relative overflow-hidden">
-        <img
-          src={
-            hotel.images?.[0]?.thumbnail ||
-            "https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg"
-          }
-          alt={hotel.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-        />
-      </div>
-
-      <div className="flex-1 p-5 flex flex-col justify-between">
-        <div>
-          <div className="flex justify-between items-start gap-4">
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-gray-700 group-hover:underline leading-tight">
-                {hotel.name}
-              </h3>
-
-              <p className="text-[11px] font-bold text-emerald-700 flex items-center gap-1 mt-1">
-                <MapPin size={18} className="opacity-20" />
-                Beside {landmark}
-              </p>
-            </div>
-
-            <div className="flex items-center gap-2 shrink-0">
-              <div className="text-right hidden sm:block">
-                <p className="text-sm font-bold text-zinc-900">Excellent</p>
-                <p className="text-[10px] text-zinc-500">
-                  {hotel.reviews || "450"} reviews
-                </p>
-              </div>
-              <div className="bg-[#003580] text-white w-9 h-9 flex items-center justify-center rounded-lg font-bold text-sm">
-                {hotel.rating || "4.0"}
-              </div>
-            </div>
-          </div>
-
-          <p className="text-xs text-zinc-600 mt-3 line-clamp-3 leading-relaxed">
-            {description}
-          </p>
-
-          <div className="mt-4 flex flex-wrap gap-2">
-            <span className="text-[10px] bg-blue-50 text-blue-700 font-bold px-2 py-1 rounded">
-              New to our site
-            </span>
-            <span className="text-[10px] bg-green-50 text-green-700 font-bold px-2 py-1 rounded">
-              Luxury Collection
-            </span>
-          </div>
-        </div>
-
-        <div className="mt-6 flex justify-between items-end border-t pt-4 border-zinc-100">
-          <div className="flex flex-col">
-            <button className="text-[11px] text-blue-600 font-bold hover:underline text-left mb-2">
-              Save for later
-            </button>
-            <p className="text-2xl font-bold text-zinc-900 leading-none">
-              {convertAndFormatPrice(hotel.price_per_night)}
-            </p>
-            <p className="text-[10px] text-zinc-400 mt-1">
-              Includes taxes and fees
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-2 items-end">
-            <p className="text-[10px] text-emerald-600 font-bold">
-              Limited time deal
-            </p>
-            <Link
-              href={`/property/${hotel.property_token}`}
-              className="bg-cyan-700 text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-[#0052ad] transition-colors shadow-sm"
-            >
-              See availability
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}

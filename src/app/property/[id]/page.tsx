@@ -90,7 +90,7 @@ export default async function PropertyDetailsPage({
                 <p className="text-xs text-zinc-500">Based on recent guest stays</p>
               </div>
               <div className="bg-[#003580] text-white px-2 py-1 rounded-t-md rounded-br-md font-bold">
-                {hotel.overall_rating}
+                {hotel.rating}
               </div>
             </div>
 

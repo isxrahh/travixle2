@@ -43,7 +43,7 @@ export async function POST(request: Request) {
       travelStyles[Math.floor(Math.random() * travelStyles.length)];
 
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-flash-lite",
+      model: "gemini-2.5-pro",
     });
 
     const prompt = `

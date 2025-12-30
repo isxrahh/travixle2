@@ -1,14 +1,12 @@
-const convertAndFormatPrice = (priceObj: any) => {
-  const usdAmount = priceObj?.extracted_price || 0;
-
+const convertAndFormatPrice = (amount: number) => {
   const exchangeRate = 84.5;
-  const inrAmount = usdAmount * exchangeRate;
+  const finalAmount = amount < 1000 ? amount * exchangeRate : amount;
 
   return new Intl.NumberFormat("en-IN", {
     style: "currency",
     currency: "INR",
     maximumFractionDigits: 0,
-  }).format(inrAmount);
+  }).format(finalAmount);
 };
 
 export default convertAndFormatPrice;
